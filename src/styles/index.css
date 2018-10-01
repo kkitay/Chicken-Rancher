@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background: #ebebeb;
+    font-family: 'Press Start 2P', cursive;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+#daycounter {
+    float: right;
+    clear: left;
+    margin-left: 3rem;
+}
+
+#credit {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+    #credit, #credit a {
+        color: #999;
+        font-size: 0.75rem;
+    }

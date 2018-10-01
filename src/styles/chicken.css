@@ -1,0 +1,16 @@
+.chicken {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 0;
+    text-align: center;
+}
+
+    .chicken p:last-child {
+        margin-bottom: 0;
+    }
+
+    .chicken .sprite {
+        width: 5rem;
+        height: 5rem;
+    }
