@@ -6,20 +6,37 @@ html, body {
 }
 
 body {
-    background: #ebebeb;
+    /*background: #ebebeb;*/
+    background-image: url('/img/sprites/grass.png');
     font-family: 'Press Start 2P', cursive;
     padding: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+}
+
+.coop, .graveyard {
+    padding: 3rem;
 }
 
 h1 {
     margin: 0;
     font-size: 1rem;
+    line-height: 1.5rem;
+    padding-right: 1rem;
+}
+
+.coop {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #daycounter {
-    float: right;
-    clear: left;
-    margin-left: 3rem;
+    text-align: right;
 }
 
 #credit {
@@ -30,6 +47,47 @@ h1 {
 }
 
     #credit, #credit a {
-        color: #999;
+        color: #fff;
         font-size: 0.75rem;
     }
+
+    #credit .secret {
+        padding-top: 1rem;
+        display:none;
+    }
+
+.incubator {
+    display: grid;
+    margin: 1rem;
+    align-self: flex-end;
+    position: relative;
+}
+
+.incubator .sprite {
+    width: 5rem;
+    height: 5rem;
+}
+
+.incubator .sprite:last-child {
+    position: relative;
+}
+
+.details {
+    margin: 0.5rem 0;
+    grid-column: 1 / 3;
+}
+
+.incubatedegg {
+    position: absolute;
+    z-index: 5;
+    top: -1rem;
+    left: 50%;
+    margin-left: -50%;
+    animation: rocking 0.3s infinite alternate;
+    transform-origin: bottom;
+}
+
+.gameover {
+    font-size: 5rem;
+    padding: 10rem 0;
+}

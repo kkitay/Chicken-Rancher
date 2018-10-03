@@ -4,11 +4,7 @@
     margin: 0;
     width: 16px;
     height: 16px;
-    display: inline-block;
-}
-
-.sprite .pixel {
-    float: left;
-    width: 6.25%;
-    height: 6.25%;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }

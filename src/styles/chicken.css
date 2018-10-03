@@ -1,16 +1,113 @@
+.chickenandeggs {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: auto auto;
+}
+
+.eggs {
+    align-self: flex-end;
+}
+
+.egg {
+    float: left;
+    cursor: pointer;
+    animation: updown 0.5s infinite alternate;
+    transform-origin: bottom;
+}
+
+    .egg.hatchable {
+        animation: rocking 0.75s infinite alternate;
+    }
+
+    .egg[draggable="true"] {
+        cursor: grab;
+    }
+
+    .egg .sprite {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    @keyframes rocking {
+        0% {
+            transform: rotate(5deg);
+        }
+        100% {
+            transform: rotate(-10deg);
+        }
+    }
+
 .chicken {
+    position: relative;
     display: inline-block;
     box-sizing: border-box;
-    padding: 1rem;
-    margin: 1rem 1rem 1rem 0;
     text-align: center;
 }
 
-    .chicken p:last-child {
-        margin-bottom: 0;
-    }
+.chicken p:last-child {
+    margin-bottom: 0;
+}
 
-    .chicken .sprite {
-        width: 5rem;
-        height: 5rem;
+.chicken .sprite {
+    width: 5rem;
+    height: 5rem;
+}
+
+.chicken .deet {
+    font-size: .5rem;
+}
+
+/* hungry chicken */
+.chicken.hungry:hover {
+    cursor: pointer;
+}
+
+.chicken.hungry:hover .hunger {
+    background: #EFD029;
+}
+
+.chicken.hungry:hover .hunger:after {
+    border-top-color: #EFD029;
+}
+
+.chicken .hunger {
+    position: absolute;
+    top: -1rem;
+    left: 0rem;
+    width: auto;
+    background: #fff;
+    border-radius: .4em;
+    font-size: .5rem;
+    display: inline-block;
+    padding: .25rem;
+    animation: updown 0.5s infinite alternate;
+}
+
+.chicken .hunger:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: .5rem solid transparent;
+    border-top-color: #fff;
+    border-bottom: 0;
+    margin-left: -.5rem;
+    margin-bottom: -.5rem;
+}
+
+.chicken .hunger .sprite {
+    width: 1.5rem;
+    height: 1.5rem;
+    float: left;
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(0rem);
     }
+    100% {
+        transform: translateY(-0.3rem);
+    }
+}
