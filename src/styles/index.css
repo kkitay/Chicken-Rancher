@@ -9,7 +9,6 @@ body {
     /*background: #ebebeb;*/
     background-image: url('/img/sprites/grass.png');
     font-family: 'Press Start 2P', cursive;
-    padding: 1rem;
     color: #fff;
     text-shadow: 1px 1px 0 #000;
 }
@@ -17,6 +16,7 @@ body {
 .header {
     display: grid;
     grid-template-columns: 4fr 2fr;
+    padding: 1rem;
 }
 
 .coop, .graveyard {

@@ -261,7 +261,7 @@ class Ranch extends React.Component {
           }
         </div>
         <div className="graveyard">
-          {this.state.chickens.filter(c => c.dead).map(chicken => 
+          {this.state.chickens.filter(c => c.dead).reverse().map(chicken => 
             <p key={chicken.id}>{chicken.name} is dead</p>
           )}
         </div>  
