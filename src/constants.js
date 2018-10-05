@@ -23,7 +23,7 @@ export const ranchConstants = {
 export const chickenConstants = {
   YOUNG_AGE: (24 * 3),
   CHANCE_HUNGRY: 0.02,
-  CHANCE_LAY: 0.02,
+  CHANCE_LAY: 0.025,
   TIME_TO_DEATH: 30,
   FEED_PRICE: 10,
 }
