@@ -1,76 +1,40 @@
+/* all chickens */
 .chickenandeggs {
     display: grid;
     margin: 1rem;
     grid-template-columns: auto auto;
 }
 
-.eggs {
-    align-self: flex-end;
-}
-
-.egg {
-    float: left;
-    cursor: pointer;
-    animation: updown 0.5s infinite alternate;
-    transform-origin: bottom;
-}
-
-    .egg.hatchable {
-        animation: rocking 0.75s infinite alternate;
-    }
-
-    .egg[draggable="true"] {
-        cursor: grab;
-    }
-
-    .egg .sprite {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    @keyframes rocking {
-        0% {
-            transform: rotate(5deg);
-        }
-        100% {
-            transform: rotate(-10deg);
-        }
-    }
-
-.chicken {
+.Chicken {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
     text-align: center;
 }
 
-.chicken p:last-child {
-    margin-bottom: 0;
-}
-
-.chicken .sprite {
+.Chicken .Sprite {
     width: 5rem;
     height: 5rem;
 }
 
-.chicken .deet {
-    font-size: .5rem;
+.Chicken p:last-child {
+    margin-bottom: 0;
 }
 
 /* hungry chicken */
-.chicken.hungry:hover {
+.Chicken.hungry:hover {
     cursor: pointer;
 }
 
-.chicken.hungry:hover .hunger {
+.Chicken.hungry:hover .hunger {
     background: #EFD029;
 }
 
-.chicken.hungry:hover .hunger:after {
+.Chicken.hungry:hover .hunger:after {
     border-top-color: #EFD029;
 }
 
-.chicken .hunger {
+.Chicken .hunger {
     position: absolute;
     top: -1rem;
     left: 0rem;
@@ -83,7 +47,7 @@
     animation: updown 0.5s infinite alternate;
 }
 
-.chicken .hunger:after {
+.Chicken .hunger:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -97,7 +61,7 @@
     margin-bottom: -.5rem;
 }
 
-.chicken .hunger .sprite {
+.Chicken .hunger .Sprite {
     width: 1.5rem;
     height: 1.5rem;
     float: left;

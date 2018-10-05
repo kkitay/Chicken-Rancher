@@ -1,0 +1,37 @@
+.Egg {
+    float: left;
+    cursor: pointer;
+    animation: updown 0.5s infinite alternate;
+    transform-origin: bottom;
+}
+
+    .Egg.hatchable {
+        animation: rocking 0.75s infinite alternate;
+    }
+
+    .Egg[draggable="true"] {
+        cursor: grab;
+    }
+
+    .Egg .Sprite {
+        width: 3rem;
+        height: 3rem;
+    }
+
+@keyframes rocking {
+    0% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(0rem);
+    }
+    100% {
+        transform: translateY(-0.3rem);
+    }
+}

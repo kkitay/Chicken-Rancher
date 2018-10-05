@@ -1,0 +1,25 @@
+.Incubator {
+    display: grid;
+    margin: 1rem;
+    align-self: flex-end;
+    position: relative;
+}
+
+.Incubator .Sprite {
+    width: 5rem;
+    height: 5rem;
+}
+
+.Incubator .Sprite.incubator:last-child {
+    position: relative;
+}
+
+.Incubator .Sprite.egg {
+    position: absolute;
+    z-index: 5;
+    top: -0.5rem;
+    left: 50%;
+    margin-left: -50%;
+    animation: rocking 0.3s infinite alternate;
+    transform-origin: bottom;
+}
