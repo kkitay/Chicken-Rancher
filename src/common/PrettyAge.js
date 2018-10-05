@@ -1,4 +1,6 @@
-function PrettyAge(hours, long = false) {
+import React from 'react';
+
+function makeAge(hours, long = false) {
   let text = '';
   let hoursInTime = {
     year: 24 * 7 * 4 * 12,
@@ -15,15 +17,6 @@ function PrettyAge(hours, long = false) {
   let days = Math.floor(hours / hoursInTime.day);
   hours = hours % hoursInTime.day;
   
-  /*let days = Math.floor(hours / 24);
-  let weeks = Math.floor(days / 7);
-  let months = Math.floor(weeks / 4);
-  let years = Math.floor(months / 12);
-  let remainingMonths = months - years * 12;
-  let remainingWeeks = weeks - remainingMonths * 4;
-  let remainingDays = days - remainingWeeks * 7;
-*/
-  //let remainingHours = hours - (years * 12 * 4 * 7 * 24) - (remainingMonths * 4 * 7 * 24) - (remainingWeeks * 7 * 24) - (remainingDays * 24);
   if(long === false) {
     if(years) text += years + 'y ';
     if(months) text += months + 'm ';
@@ -40,4 +33,9 @@ function PrettyAge(hours, long = false) {
   return text.trim();
 }
 
-module.exports = PrettyAge;
+const PrettyAge = props => {
+  return (<div className="PrettyAge">{makeAge(props.time, props.long)}</div>
+  );
+}
+
+export default PrettyAge;

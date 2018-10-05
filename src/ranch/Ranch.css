@@ -2,25 +2,19 @@
 
 html, body {
     margin: 0;
-    height: 100%;
 }
 
 body {
-    /*background: #ebebeb;*/
     background-image: url('/img/sprites/grass.png');
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
     color: #fff;
     text-shadow: 1px 1px 0 #000;
 }
 
-.header {
+.Header {
     display: grid;
     grid-template-columns: 4fr 2fr;
     padding: 1rem;
-}
-
-.coop, .graveyard {
-    padding: 3rem;
 }
 
 h1 {
@@ -30,12 +24,7 @@ h1 {
     padding-right: 1rem;
 }
 
-.coop {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#daycounter {
+.Header .PrettyAge {
     text-align: right;
 }
 
@@ -56,38 +45,7 @@ h1 {
         display:none;
     }
 
-.incubator {
-    display: grid;
-    margin: 1rem;
-    align-self: flex-end;
-    position: relative;
-}
-
-.incubator .sprite {
-    width: 5rem;
-    height: 5rem;
-}
-
-.incubator .sprite:last-child {
-    position: relative;
-}
-
 .details {
     margin: 0.5rem 0;
     grid-column: 1 / 3;
-}
-
-.incubatedegg {
-    position: absolute;
-    z-index: 5;
-    top: -1rem;
-    left: 50%;
-    margin-left: -50%;
-    animation: rocking 0.3s infinite alternate;
-    transform-origin: bottom;
-}
-
-.gameover {
-    font-size: 5rem;
-    padding: 10rem 0;
 }

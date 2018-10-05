@@ -1,0 +1,10 @@
+.Coop {
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.GameOver {
+    font-size: 5rem;
+    padding: 10rem 3rem;
+}
