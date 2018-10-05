@@ -11,11 +11,7 @@ const generateEgg = (chicken, id, roll1) => {
   return obj;
 }
 
-const initialState = {
-  ...generateEgg(1, 1, Math.random()),
-  ...generateEgg(1, 2, Math.random()),
-  ...generateEgg(2, 3, Math.random()),
-}
+const initialState = {}
 
 const eggReducer = (state = initialState, action) => {
   // lay egg

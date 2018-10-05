@@ -13,6 +13,12 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    time: state.ranch.time,
+  }
+}
+
 class Incubator extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +32,7 @@ class Incubator extends React.Component {
     this.setState({ egg: null });
 
     // hatch a chicken!
-    this.props.hatchChicken(0);
+    this.props.hatchChicken(this.props.time);
   }
 
   eggDragOver = (e) => {
@@ -68,4 +74,4 @@ class Incubator extends React.Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Incubator);
+export default connect(mapStateToProps, mapDispatchToProps)(Incubator);

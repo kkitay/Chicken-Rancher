@@ -1,12 +1,12 @@
 import {chickenConstants, actionTypes} from '../constants';
 
-const generateChicken = (id, adult = false, born = 0, roll1 = Math.random(), roll2 = Math.random(), roll3 = Math.random()) => {
+const generateChicken = (id, born, roll1 = Math.random(), roll2 = Math.random(), roll3 = Math.random()) => {
   let names = ['Henny', 'Penny', 'Dorothy', 'Henrietta', 'Plucky', 'Goldie', 'Matilda','Anastasia','Annie','Arabella','Beatrice','Betsy','Edna','Charlotte','Daphne','Dottie','Estelle','Eloise','Felicity','Florence','Francis','Genevieve','Georgia','Geraldine','Gladys','Gloria','Harriet','Holly','Iris','June','Loretta','Mabel','Maude','Minnie','Matilda','Myrtle','Opal','Pearl','Penelope','Polly','Stella','Sadie','Tillie'];
   let foods = ['corn','carrot','eggplant','turnip'];
   let returnObj = {};
   returnObj[id] = {
     id: id,
-    born: (adult ? (-1 * chickenConstants.YOUNG_AGE) : 0),
+    born,
     name: names[Math.floor((roll1*names.length))],
     favoriteFood: foods[Math.floor(roll2 * foods.length)],
     lastHungry: null,
@@ -16,9 +16,9 @@ const generateChicken = (id, adult = false, born = 0, roll1 = Math.random(), rol
 }
 
 const initialState = {
-  ...generateChicken(1, true),
-  ...generateChicken(2, true),
-  ...generateChicken(3, true),
+  ...generateChicken(1, (-1 * chickenConstants.YOUNG_AGE)),
+  ...generateChicken(2, (-1 * chickenConstants.YOUNG_AGE)),
+  ...generateChicken(3, (-1 * chickenConstants.YOUNG_AGE)),
 }
 
 const chickenReducer = (state = initialState, action) => {
@@ -45,7 +45,7 @@ const chickenReducer = (state = initialState, action) => {
   }
   // HATCH CHICKEN
   if(action.type === actionTypes.chicken.HATCH_CHICKEN) {
-    let newChicken = generateChicken(action.id, false, action.timestamp, action.roll1, action.roll2, action.roll3);
+    let newChicken = generateChicken(action.id, action.timestamp, action.roll1, action.roll2, action.roll3);
     return { ...state, ...newChicken };
   }
   return state;
