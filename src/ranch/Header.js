@@ -2,13 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PrettyAge from '../common/PrettyAge';
 
-const liveChickens = 3;
-
 const mapStateToProps = state => {
-  return { gold: state.ranch.gold, time: state.ranch.time };
+  return {
+    gold: state.ranch.gold,
+    time: state.ranch.time,
+    chickens: state.chickens,
+  };
 }
 
-const Header = ({ gold, time }) => (
+const Header = ({ gold, time, chickens }) => {
+  let liveChickens = Object.keys(chickens).filter(c => !c.dead).length;
+  return (
   <div className="Header">
     <h1>
       You have {gold}G.
@@ -19,6 +23,7 @@ const Header = ({ gold, time }) => (
     </h1>
     <PrettyAge time={time} long />
   </div>
-);
+  );
+}
 
 export default connect(mapStateToProps)(Header);
