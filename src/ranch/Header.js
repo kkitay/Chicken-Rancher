@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 }
 
 const Header = ({ gold, time, chickens }) => {
-  let liveChickens = Object.keys(chickens).filter(c => !c.dead).length;
+  let liveChickens = Object.values(chickens).filter(c => !c.dead).length;
   return (
   <div className="Header">
     <h1>
